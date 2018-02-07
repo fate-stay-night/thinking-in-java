@@ -1,4 +1,4 @@
-package xyz.vimtool.chapter18;
+package xyz.vimtool.chapter18.section10;
 
 import java.io.*;
 import java.nio.IntBuffer;
