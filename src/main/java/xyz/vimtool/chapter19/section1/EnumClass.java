@@ -29,5 +29,7 @@ public class EnumClass {
             Shrubbery shrubbery = Enum.valueOf(Shrubbery.class, s);
             System.out.println(shrubbery);
         }
+
+
     }
 }
