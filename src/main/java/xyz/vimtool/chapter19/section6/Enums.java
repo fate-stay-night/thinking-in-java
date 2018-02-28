@@ -14,11 +14,14 @@ public class Enums {
 
     private static Random rand = new Random(47);
 
+    //通过反射Class.getEnumConstants()来随机选取
     public static <T extends Enum<T>> T random(Class<T> ec) {
+        //通过Class.getEnumConstants()方法取得所有enum实例
         return random(ec.getEnumConstants());
     }
 
     public static <T> T random(T[] values) {
+        //随机选取
         return values[rand.nextInt(values.length)];
     }
 }
