@@ -1,9 +1,5 @@
 package xyz.vimtool.chapter19.section11;
 
-import static xyz.vimtool.chapter19.section11.Outcome.DRAW;
-import static xyz.vimtool.chapter19.section11.Outcome.LOSE;
-import static xyz.vimtool.chapter19.section11.Outcome.WIN;
-
 /**
  * 
  *
