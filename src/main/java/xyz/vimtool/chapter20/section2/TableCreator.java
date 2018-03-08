@@ -3,7 +3,6 @@ package xyz.vimtool.chapter20.section2;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
