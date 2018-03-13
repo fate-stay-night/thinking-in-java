@@ -6,9 +6,18 @@
 
     <groupId>xyz.vimtool</groupId>
     <artifactId>thinking-in-java</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>core</module>
+        <module>utils</module>
+    </modules>
 
-    <!--将远程仓库配置配置为私服-->
+    <properties>
+        <project.version>1.0-SNAPSHOT</project.version>
+    </properties>
+
+    <!--配置仓库服务器-->
     <repositories>
         <repository>
             <id>aliyun</id>
@@ -16,6 +25,22 @@
             <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
         </repository>
     </repositories>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>xyz.vimtool</groupId>
+                <artifactId>core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.mindview</groupId>
+                <artifactId>utils</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/xom/xom -->
@@ -25,20 +50,31 @@
             <version>1.2.5</version>
         </dependency>
 
-        <dependency>
-            <groupId>net.mindview</groupId>
-            <artifactId>net</artifactId>
-            <scope>system</scope>
-            <version>1.0.0</version>
-            <systemPath>${basedir}/src/main/resources/jar/net-1.0.0.jar</systemPath>
-        </dependency>
-
-        <dependency>
-            <groupId>com.sun</groupId>
-            <artifactId>mirror</artifactId>
-            <scope>system</scope>
-            <version>1.0.0</version>
-            <systemPath>${basedir}/src/main/resources/jar/apt-mirror-api-0.1.jar</systemPath>
-        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <!--设置java compiler和language level为1.8-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <!--设置war包中不包含web.xml文件-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
