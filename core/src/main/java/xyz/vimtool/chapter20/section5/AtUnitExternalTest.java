@@ -1,7 +1,6 @@
 package xyz.vimtool.chapter20.section5;
 
-import net.mindview.atunit.Test;
-import net.mindview.util.OSExecute;
+import xyz.vimtool.chapter20.section1.Test;
 
 /**
  * 利用继承生成一个非嵌入式的测试
@@ -24,6 +23,8 @@ public class AtUnitExternalTest extends AtUnitExample1 {
     }
 
     public static void main(String[] args) {
-        OSExecute.command("java net.mindview.atunit.AtUnit AtUnitExternalTest");
+        String[] sl = {ClassLoader.getSystemResource("").getPath()
+                + "xyz/vimtool/chapter20/section5/AtUnitExternalTest"};
+        AtUnit.mainProcess(sl);
     }
 }

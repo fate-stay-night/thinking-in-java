@@ -1,7 +1,7 @@
 package xyz.vimtool.chapter20.section5;
 
-import net.mindview.atunit.*;
 import net.mindview.util.OSExecute;
+import xyz.vimtool.chapter20.section1.Test;
 
 /**
  * 注解的单元测试
@@ -49,6 +49,8 @@ public class AtUnitExample1 {
     }
 
     public static void main(String[] args) {
-        OSExecute.command("java net.mindview.atunit.AtUnit AtUnitExample1");
+        String[] sl = {ClassLoader.getSystemResource("").getPath()
+                + "xyz/vimtool/chapter20/section5/AtUnitExample1"};
+        AtUnit.mainProcess(sl);
     }
 }

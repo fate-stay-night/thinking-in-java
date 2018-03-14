@@ -1,7 +1,6 @@
 package xyz.vimtool.chapter20.section5;
 
-import net.mindview.atunit.Test;
-import net.mindview.util.OSExecute;
+import xyz.vimtool.chapter20.section1.Test;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -48,6 +47,8 @@ public class AtUnitExample2 {
     }
 
     public static void main(String[] args) throws Exception {
-        OSExecute.command("java net.mindview.atunit.AtUnit AtUnitExample2");
+        String[] sl = {ClassLoader.getSystemResource("").getPath()
+                + "xyz/vimtool/chapter20/section5/AtUnitExample2"};
+        AtUnit.mainProcess(sl);
     }
 }

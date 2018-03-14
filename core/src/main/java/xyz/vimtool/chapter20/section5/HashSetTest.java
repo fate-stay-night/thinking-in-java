@@ -1,7 +1,6 @@
 package xyz.vimtool.chapter20.section5;
 
-import net.mindview.atunit.Test;
-import net.mindview.util.OSExecute;
+import xyz.vimtool.chapter20.section1.Test;
 
 import java.util.HashSet;
 
@@ -35,6 +34,8 @@ public class HashSetTest {
     }
 
     public static void main(String[] args) throws Exception {
-        OSExecute.command("java net.mindview.atunit.AtUnit HashSetTest");
+        String[] sl = {ClassLoader.getSystemResource("").getPath()
+                + "xyz/vimtool/chapter20/section5/HashSetTest"};
+        AtUnit.mainProcess(sl);
     }
 }

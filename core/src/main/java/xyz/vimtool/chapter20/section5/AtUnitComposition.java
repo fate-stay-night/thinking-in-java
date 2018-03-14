@@ -1,7 +1,7 @@
 package xyz.vimtool.chapter20.section5;
 
-import net.mindview.atunit.Test;
 import net.mindview.util.OSExecute;
+import xyz.vimtool.chapter20.section1.Test;
 
 /**
  * 
@@ -26,6 +26,8 @@ public class AtUnitComposition {
     }
 
     public static void main(String[] args) throws Exception {
-        OSExecute.command("java net.mindview.atunit.AtUnit AtUnitComposition");
+        String[] sl = {ClassLoader.getSystemResource("").getPath()
+                + "xyz/vimtool/chapter20/section5/AtUnitComposition"};
+        AtUnit.mainProcess(sl);
     }
 }
