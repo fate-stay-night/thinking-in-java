@@ -1,6 +1,17 @@
 # Thinking in java
 Thinking in java 4th book source code.
 
+## 14 类型信息
+### 14.1 为什么需要RTTI
+### 14.2 Class对象
+### 14.3 类型转换前先做检查
+### 14.4 注册工厂
+### 14.5 instanceof和Class的等价性
+### 14.6 反射：运行时的类信息
+### 14.7 动态代理
+### 14.8 空对象
+### 14.9 接口与类型信息
+
 ## 18 Java I/O系统
 ### 18.1 File类
 ### 18.2 输入和输出
