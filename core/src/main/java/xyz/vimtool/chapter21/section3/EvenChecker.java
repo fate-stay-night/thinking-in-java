@@ -2,6 +2,7 @@ package xyz.vimtool.chapter21.section3;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 偶数检查器
@@ -30,6 +31,11 @@ public class EvenChecker implements Runnable {
             if (val % 2 != 0) {
                 System.out.println(val + " not even!");
                 intGenerator.cancel();
+            }
+            try {
+                TimeUnit.MINUTES.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
     }
