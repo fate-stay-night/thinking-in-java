@@ -10,7 +10,8 @@ package xyz.vimtool.chapter21.section2;
  */
 public class LiftOff implements Runnable {
 
-    protected int countDown = 10; //default
+    // default
+    protected int countDown = 10;
 
     private static int taskCount = 0;
 

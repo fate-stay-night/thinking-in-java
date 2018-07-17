@@ -29,7 +29,8 @@ public class AtUnit implements ProcessFiles.Strategy {
     public static long failures = 0;
 
     public static void mainProcess(String[] nameArray) {
-        ClassLoader.getSystemClassLoader().setDefaultAssertionStatus(true); //Enable asserts
+        //Enable asserts
+        ClassLoader.getSystemClassLoader().setDefaultAssertionStatus(true);
         new ProcessFiles(new AtUnit(), "class").start(nameArray);
 
         if (failures == 0) {
@@ -44,6 +45,7 @@ public class AtUnit implements ProcessFiles.Strategy {
         }
     }
 
+    @Override
     public void process(File cFile) {
         try {
             String cName = ClassNameFinder.thisClass(BinaryFile.read(cFile));
@@ -98,7 +100,8 @@ public class AtUnit implements ProcessFiles.Strategy {
                         success = (Boolean) m.invoke(testObject);
                     } else {
                         m.invoke(testObject);
-                        success = true; //If no assert fails
+                        //If no assert fails
+                        success = true;
                     }
                 } catch (InvocationTargetException e) {
                     //Actual exception is inside e:
@@ -133,7 +136,8 @@ public class AtUnit implements ProcessFiles.Strategy {
                 throw new RuntimeException("@Test method must return boolean or void");
             }
 
-            m.setAccessible(true); // In case it's private. etc.
+            // In case it's private. etc.
+            m.setAccessible(true);
             add(m);
         }
     }
