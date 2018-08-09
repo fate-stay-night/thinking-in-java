@@ -45,7 +45,7 @@ class ExplicitPairManager1 extends PairManager {
     }
 }
 
-// Use a critical section
+// Use a critical section8
 class ExplicitPairManager2 extends PairManager {
 
     private Lock lock = new ReentrantLock();

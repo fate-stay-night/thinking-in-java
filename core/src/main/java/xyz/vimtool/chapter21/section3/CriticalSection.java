@@ -129,7 +129,7 @@ class PairManger1 extends PairManager {
     }
 }
 
-// Use a critical section
+// Use a critical section8
 class PairManager2 extends PairManager {
 
     @Override
