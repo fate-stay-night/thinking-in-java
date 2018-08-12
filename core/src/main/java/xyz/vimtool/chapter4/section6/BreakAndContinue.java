@@ -1,6 +1,7 @@
 package xyz.vimtool.chapter4.section6;
 
-import xyz.vimtool.chapter4.section4.ForEachInt;
+
+import static xyz.vimtool.chapter6.section1.Range.range;
 
 /**
  * break and continue
@@ -26,7 +27,7 @@ public class BreakAndContinue {
         }
         System.out.println();
 
-        for (int i : ForEachInt.range(100)) {
+        for (int i : range(100)) {
             if (i == 74) {
                 break;
             }
