@@ -63,10 +63,12 @@ class Circle extends Shape {
         super(xPos, yPos, dim);
     }
 
+    @Override
     public int getColor() {
         return color;
     }
 
+    @Override
     public void setColor(int newColor) {
         color = newColor;
     }
@@ -81,10 +83,12 @@ class Square extends Shape {
         color = RED;
     }
 
+    @Override
     public int getColor() {
         return color;
     }
 
+    @Override
     public void setColor(int newColor) {
         color = newColor;
     }
@@ -106,10 +110,12 @@ class Line extends Shape {
         super(xPos, yPos, dim);
     }
 
+    @Override
     public int getColor() {
         return color;
     }
 
+    @Override
     public void setColor(int newColor) {
         color = newColor;
     }
