@@ -1,8 +1,6 @@
 package xyz.vimtool.chapter21.section2;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.*;
 
 /**
  * 捕获线程异常
@@ -15,7 +13,9 @@ import java.util.concurrent.ThreadFactory;
 public class CaptureUncaughtException {
 
     public static void main(String[] args) {
-        ExecutorService executorService = Executors.newCachedThreadPool(new HandlerThreadFactory());
+//        ExecutorService executorService = Executors.newCachedThreadPool(new HandlerThreadFactory());
+        ExecutorService executorService = new ThreadPoolExecutor(5, 200, 0L, TimeUnit.MILLISECONDS,
+                new LinkedBlockingQueue<>(1024), new HandlerThreadFactory(), new ThreadPoolExecutor.AbortPolicy());
         executorService.execute(new ExceptionThread2());
     }
 }
@@ -31,7 +31,9 @@ class ExceptionThread2 implements Runnable {
     }
 }
 
-// 线程异常处理器
+/**
+ * 线程异常处理器
+ */
 class MyUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
 
     @Override
@@ -40,7 +42,9 @@ class MyUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
     }
 }
 
-// 线程生产工厂，添加线程异常处理器
+/**
+ * 线程生产工厂，添加线程异常处理器
+ */
 class HandlerThreadFactory implements ThreadFactory {
     @Override
     public Thread newThread(Runnable r) {
