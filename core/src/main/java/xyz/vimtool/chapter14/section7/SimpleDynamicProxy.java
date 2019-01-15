@@ -26,7 +26,8 @@ public class SimpleDynamicProxy {
         // 创建动态代理
         Interface proxy = (Interface) Proxy.newProxyInstance(Interface.class.getClassLoader(),
                 new Class[]{Interface.class}, new DynamicProxyHandler(realObject));
-        consumer(proxy); // 代理调用
+        // 代理调用
+        consumer(proxy);
     }
 }
 

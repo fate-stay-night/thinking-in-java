@@ -28,7 +28,9 @@ public class Person {
         this.last = last;
     }
 
-    //Produce an XML Element from this Person Object:
+    /**
+     * Produce an XML Element from this Person Object:
+     */
     public Element getXML() {
         Element person = new Element("person");
 
@@ -42,17 +44,22 @@ public class Person {
         return person;
     }
 
-    //Constructor to restore a Person from an XML Element
+    /**
+     * Constructor to restore a Person from an XML Element
+     */
     public Person(Element person) {
         first = person.getFirstChildElement("first").getValue();
         last = person.getFirstChildElement("last").getValue();
     }
 
+    @Override
     public String toString() {
         return first + " " + last;
     }
 
-    //Make it human-readable
+    /**
+     * Make it human-readable
+     */
     public static void format(OutputStream out, Document doc) throws Exception {
         Serializer serializer = new Serializer(out, "ISO-8859-1");
         serializer.setIndent(4);
