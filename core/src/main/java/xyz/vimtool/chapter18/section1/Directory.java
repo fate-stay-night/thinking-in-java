@@ -36,6 +36,7 @@ public final class Directory {
 
         public List<File> dirs = new ArrayList<>();
 
+        @Override
         public Iterator<File> iterator() {
             return files.iterator();
         }
