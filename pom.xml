@@ -7,14 +7,14 @@
     <groupId>xyz.vimtool</groupId>
     <artifactId>thinking-in-java</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <modules>
         <module>core</module>
         <module>utils</module>
     </modules>
 
     <properties>
-        <project.version>1.0-SNAPSHOT</project.version>
+        <project.version>1.0.0</project.version>
     </properties>
 
     <!--配置仓库服务器-->

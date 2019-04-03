@@ -11,17 +11,17 @@ import java.util.ArrayList;
  */
 public class Pets {
 
-    public static final PetCreator creator = new LiteralPetCreator();
+    public static final PetCreator CREATOR = new LiteralPetCreator();
 
     public static Pet randomPet() {
-        return creator.randomPet();
+        return CREATOR.randomPet();
     }
 
     public static Pet[] createArray(int size) {
-        return creator.createArray(size);
+        return CREATOR.createArray(size);
     }
 
     public static ArrayList<Pet> arrayList(int size) {
-        return creator.arrayList(size);
+        return CREATOR.arrayList(size);
     }
 }
